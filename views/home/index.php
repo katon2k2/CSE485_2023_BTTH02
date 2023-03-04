@@ -31,20 +31,25 @@
         <h3 class="text-center text-uppercase mb-3 text-primary" style=" font-size:30px;">
         TOP bài hát yêu thích
         </h3>
-        title
         <div class="row">
+        <?php
+            foreach ($articlehome as $value) {              
+        ?>
                 <div class="col-sm-3" style=" display: flex; flex-wrap: wrap; margin-top: 15px;">
                     <div class="card mb-2" style="width: 100%;">
-                        <img src="assets/images/songs/csmt.jpg" class="card-img-top" alt="..." >
+                        <img src="<?php echo $value['hinhanh'];?>" class="card-img-top" alt="..." >
                         <div class="card-body" style = "background-image: linear-gradient(to bottom right, Fuchsia, Blue); ">
                             <h5 class="card-title text-center">
-                                <a href="detail.php?id=<?php echo $row['ma_bviet'];?>" style="color : #FFFFFF; font-size:30px;" class="text-decoration-none">
-                                abc
+                                <a href="index.php?controller=detail&id=<?php echo $value['ma_bviet'];?>" style="color : #FFFFFF; font-size:30px;" class="text-decoration-none">
+                                <?php echo $value['ten_bhat'];?>
                                 </a>
                             </h5>
                         </div>
                     </div>
                 </div>
+        <?php 
+        }
+        ?>
         </div>
     </main>
 <?php include 'views/layout/footer.php'; ?>
