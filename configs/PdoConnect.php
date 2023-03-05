@@ -11,8 +11,8 @@
 			}
 		}
 
-		publuc function getConnect(){
-			return $conn;
+		public function getConnect(){
+			return $this->conn;
 		}
 	}
 ?>

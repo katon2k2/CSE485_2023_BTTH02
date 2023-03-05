@@ -1,28 +1,7 @@
-<?php require 'includes/header.php';?>
-<?php include 'includes/connect.php';?>
-<?php include 'includes/sessions.php';?>
-
-    <?php
-        if(isset($_GET['logout'])){
-            if($_GET['logout']==1)
-                logout();
-        }
-
-        if(isset($_POST['username']) AND isset($_POST['username'])){
-            $account = $_POST['username'];
-            $password = $_POST['password'];
-            $query = "SELECT * FROM user WHERE user.ten_dnhap LIKE '{$account}' AND user.mat_khau LIKE '{$password}'";
-            $result = mysqli_query($conn,$query);
-            if(mysqli_num_rows($result)>0){
-                $data = mysqli_fetch_assoc($result);
-                if($data['ten_dnhap']===$account AND $data['mat_khau']===$password){
-                    login();
-                    header("Location: admin/index.php");
-                    exit;
-                }
-            }
-        }
-    ?>
+<?php
+    define('PATCH_ROOT_LOGIN', dirname(__FILE__, 3));
+    require PATCH_ROOT_LOGIN . '/views/layout/header.php';
+?>
 
     </header>
     <main class="container mt-5 mb-5">
@@ -38,7 +17,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="login.php" method="POST">
+                    <form action="index.php?controller=login&action=login" method="POST">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="txtUser"><i class="fas fa-user"></i></span>
                             <input type="text" class="form-control" placeholder="username" name="username" >
@@ -68,4 +47,4 @@
             </div>
         </div>
     </main>
-<?php include 'includes/footer.php'; ?>
+<?php include PATCH_ROOT_LOGIN . '/views/layout/footer.php'; ?>
