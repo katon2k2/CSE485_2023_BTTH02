@@ -1,5 +1,7 @@
-<?php require 'views/layout/header.php'; ?>
-
+<?php
+    define("PATCH_ROOT_INDEX", dirname(__FILE__, 3));
+    require PATCH_ROOT_INDEX . '/views/layout/header.php';
+?>
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -52,4 +54,4 @@
         ?>
         </div>
     </main>
-<?php include 'views/layout/footer.php'; ?>
+<?php include PATCH_ROOT_INDEX . '/views/layout/footer.php'; ?>
