@@ -56,7 +56,7 @@
                         </h5>
 
                         <h5 class="h1 text-center">
-                            00
+                            <?php echo $as->getNumbersArticle(); ?>
                         </h5>
                     </div>
                 </div>
