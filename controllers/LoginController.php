@@ -1,8 +1,9 @@
 <?php
-	require_once("services/UserService.php");
+	define('PATCH_ROOT_LOGINCONTROLLER', dirname(__FILE__, 2));
+	require_once(PATCH_ROOT_LOGINCONTROLLER . "/services/UserService.php");
 	class LoginController{
 	    public function index(){
-	        include("views/login/login.php");
+	        include(PATCH_ROOT_LOGINCONTROLLER . "/views/login/login.php");
 	    }
 
 	    public function login(){

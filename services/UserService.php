@@ -1,7 +1,7 @@
 <?php
-
-	require_once('configs/PdoConnect.php');
-	require_once('models/User.php');
+	define('PATCH_ROOT_USERSERVICE', dirname(__FILE__, 2));
+	require_once(PATCH_ROOT_USERSERVICE . '/configs/PdoConnect.php');
+	require_once(PATCH_ROOT_USERSERVICE . '/models/User.php');
 
 	class UserService
 	{
@@ -18,6 +18,18 @@
             		return false;
            		}
     		}
+		}
+
+		public function getNumbersUser(){
+			$DBconnect = new PdoConnect();
+			$conn = $DBconnect->getConnect();
+			$sql = "SELECT COUNT(user.ma_ngdung) AS 'so_luong' FROM user";
+    		$stmt = $conn->query($sql);
+    		$numbersUser = 0;
+    		while($row = $stmt->fetch()){
+    			$numbersUser = $row['so_luong'];
+    		}
+    		return $numbersUser;
 		}
 	}
 ?>

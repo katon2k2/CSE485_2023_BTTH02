@@ -1,4 +1,7 @@
-<?php require 'views/layout/header.php';?>
+<?php
+    define('PATCH_ROOT_LOGIN', dirname(__FILE__, 3));
+    require PATCH_ROOT_LOGIN . '/views/layout/header.php';
+?>
 
     </header>
     <main class="container mt-5 mb-5">
@@ -44,4 +47,4 @@
             </div>
         </div>
     </main>
-<?php include 'views/layout/footer.php'; ?>
+<?php include PATCH_ROOT_LOGIN . '/views/layout/footer.php'; ?>

@@ -1,4 +1,7 @@
-<?php require 'views/layout/header_admin.php'; ?>
+<?php
+    define('PATCH_ROOT_ADMIN_INDEX', dirname(__FILE__, 3));
+    require PATCH_ROOT_ADMIN_INDEX . '/views/layout/header_admin.php';
+?>
 
     <main class="container mt-5 mb-5">
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
@@ -11,7 +14,7 @@
                         </h5>
 
                         <h5 class="h1 text-center">
-                            00
+                            <?php echo $us->getNumbersUser(); ?>
                         </h5>
                     </div>
                 </div>
@@ -60,4 +63,4 @@
             </div>
         </div>
     </main>
-<?php include 'views/layout/footer_admin.php'; ?>
+<?php include PATCH_ROOT_ADMIN_INDEX . '/views/layout/footer_admin.php'; ?>
