@@ -28,10 +28,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./">Trang chủ</a>
+                    <a class="nav-link active" aria-current="page" href="index.php">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="./login.php?logout=1">Đăng nhập</a>
+                    <a class="nav-link" href="index.php?controller=login">Đăng nhập</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
