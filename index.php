@@ -3,9 +3,9 @@
 	$action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
 	$controller = ucfirst($controller) . "Controller";
-
+	
 	$controllerPath = "controllers/". $controller .".php";
-
+		
 	if(!file_exists($controllerPath)){
 		echo "missing file";
 	}
